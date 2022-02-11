@@ -1,0 +1,5 @@
+---
+- hosts: "{{ hostnames | default('all') }}"
+  roles:
+    - dotfiles_bash
+    - dotfiles_htop
