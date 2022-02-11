@@ -1,0 +1,35 @@
+---
+- name: Adding ~/.bash_rtsp.d entry point to .bashrc
+  ansible.builtin.blockinfile:
+    path: ~/.bashrc
+    backup: true
+    marker: "## {mark} ~/.bash_rtsp.d ENTRY POINT. DO NOT REMOVE"
+    block: |
+      source <(cat ~/.bash_rtsp.d/*.sh 2>/dev/null)
+
+- name: Removing HISTSIZE and HISTFILESIZE lines from .bashrc
+  ansible.builtin.replace:
+    path: ~/.bashrc
+    regexp: "{{ item }}"
+    replace: '# \g<1>'
+    backup: true
+  loop:
+    - "^(HISTSIZE=.*)"
+    - "^(HISTFILESIZE=.*)"
+
+- name: Copying ~/.bash_rtsp.d/*
+  ansible.builtin.copy:
+    src: bash_rtsp.d/
+    dest: ~/.bash_rtsp.d/
+    directory_mode: 0755
+    mode: 0644
+    force: true
+    backup: true
+
+- name: Copying ~/.inputrc
+  ansible.builtin.copy:
+    src: inputrc
+    dest: ~/.inputrc
+    mode: 0644
+    force: true
+    backup: true

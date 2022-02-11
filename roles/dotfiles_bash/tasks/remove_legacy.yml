@@ -1,0 +1,25 @@
+---
+## MIGRATION TASKS: expect to be removed in the future
+- name: Removing legacy .bash_rtsp
+  ansible.builtin.file:
+    path: "~/.bash_rtsp"
+    state: absent
+
+## MIGRATION TASKS: expect to be removed in the future
+- name: Removing legacy .bash_rtsp entry point from .bashrc (2021)
+  ansible.builtin.blockinfile:
+    path: ~/.bashrc
+    marker: "## {mark} .bash_rtsp entry point. DO NOT REMOVE!"
+    state: absent
+    backup: false
+
+## MIGRATION TASKS: expect to be removed in the future
+- name: Removing legacy .bash_rtsp entry point from .bashrc (2014)
+  ansible.builtin.lineinfile:
+    path: ~/.bashrc
+    regexp: "{{ item }}"
+    state: absent
+    backup: false
+  loop:
+    - "^## RTSP entry point.*"
+    - '^if \[ -f ~/.bash_rtsp \].+'
