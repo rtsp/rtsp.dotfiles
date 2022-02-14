@@ -1,0 +1,4 @@
+---
+- hosts: "{{ hostnames | default('all') }}"
+  roles:
+    - dotfiles_screen
