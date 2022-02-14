@@ -3,3 +3,7 @@
   roles:
     - dotfiles_bash
     - dotfiles_htop
+    - dotfiles_nano
+    - dotfiles_screen
+    - dotfiles_top
+    - dotfiles_vim
