@@ -1,0 +1,41 @@
+" RTSP BASH environment
+" .vimrc - Version 1.1 2010/06/27
+
+set nocompatible
+set backspace=indent,eol,start
+set autoindent
+set linebreak
+set textwidth=0
+set nobackup
+set ruler
+syntax on
+
+set showcmd
+set showmatch
+set ignorecase
+set incsearch
+set tabstop=4
+set number
+set hlsearch
+"set mouse=a
+
+"map <F8> :call ToggleNumber()<CR><CR>
+"map <F9> :w<CR>
+"map <F11> :w<CR>:call ExecShell()<CR>
+map <F12> :q!<CR>
+
+"function! ChmodExec()
+"	!if [ -x % ]; then echo "Enabling execute on %"; chmod -x %; else echo "Disabling execute %"; chmod +x %;  fi
+"endfunction
+
+"function! ExecShell()
+"	!./%
+"endfunction
+
+"function! ToggleNumber()
+"	if &number
+"		set nonumber
+"	else
+"		set number
+"	endif
+"endfunction

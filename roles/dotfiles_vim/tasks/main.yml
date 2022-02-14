@@ -1,0 +1,20 @@
+---
+- name: top
+  block:
+    - name: Copying ~/.vimrc
+      ansible.builtin.copy:
+        src: "{{ lookup('first_found', params) }}"
+        dest: ~/.vimrc
+        mode: 0644
+        force: true
+        backup: true
+      vars:
+        params:
+          files:
+            - vimrc-{{ ansible_facts.distribution }}-{{ ansible_facts.distribution_major_version }}
+            - vimrc
+  when:
+    - ansible_facts.os_family in ["Debian"]
+    - ansible_facts.distribution_major_version | int in [6, 7, 8, 9, 10, 11]
+  tags:
+    - dotfiles-vim
