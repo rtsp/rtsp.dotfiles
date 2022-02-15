@@ -1,17 +1,6 @@
 ---
 - name: bash
   block:
-    - name: Remove legacy BASH dotfiles
-      include_tasks:
-        file: remove_legacy.yml
-        apply:
-          tags:
-            - dotfiles-bash
-            - dotfiles-bash-remove-legacy
-      tags:
-        - dotfiles-bash
-        - dotfiles-bash-remove-legacy
-
     - name: Install BASH dotfiles
       include_tasks:
         file: install_bash.yml
@@ -22,6 +11,17 @@
       tags:
         - dotfiles-bash
         - dotfiles-bash-install
+
+    - name: Remove legacy BASH dotfiles
+      include_tasks:
+        file: remove_legacy.yml
+        apply:
+          tags:
+            - dotfiles-bash
+            - dotfiles-bash-remove-legacy
+      tags:
+        - dotfiles-bash
+        - dotfiles-bash-remove-legacy
   when:
     - ansible_facts.os_family in ["Debian"]
     - ansible_facts.distribution_major_version | int in [9, 10, 11]
