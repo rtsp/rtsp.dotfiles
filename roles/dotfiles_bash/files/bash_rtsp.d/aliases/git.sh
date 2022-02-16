@@ -4,7 +4,7 @@ if which git > /dev/null 2>&1; then
   alias gd='git diff'
   alias gds='git diff --staged'
   alias gba='git branch -a'
-  alias gl='git log --oneline --graph -n 20 --decorate'
+  alias gl='git log --oneline --graph -n 30 --decorate'
   alias gls='git log --oneline --graph -n 10 --decorate --stat'
   alias grv='git remote -v'
 fi
