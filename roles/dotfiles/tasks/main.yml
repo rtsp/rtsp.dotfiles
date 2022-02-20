@@ -1,0 +1,76 @@
+---
+- name: dotfiles
+  block:
+    - name: Invoke bash role
+      include_role:
+        name: dotfiles_bash
+        apply:
+          tags:
+            - dotfiles
+            - dotfiles-bash
+      tags:
+        - dotfiles
+        - dotfiles-bash
+
+    - name: Invoke htop role
+      include_role:
+        name: dotfiles_htop
+        apply:
+          tags:
+            - dotfiles
+            - dotfiles-htop
+      tags:
+        - dotfiles
+        - dotfiles-htop
+
+    - name: Invoke nano role
+      include_role:
+        name: dotfiles_nano
+        apply:
+          tags:
+            - dotfiles
+            - dotfiles-nano
+      tags:
+        - dotfiles
+        - dotfiles-nano
+
+    - name: Invoke screen role
+      include_role:
+        name: dotfiles_screen
+        apply:
+          tags:
+            - dotfiles
+            - dotfiles-screen
+      tags:
+        - dotfiles
+        - dotfiles-screen
+
+    - name: Invoke top role
+      include_role:
+        name: dotfiles_top
+        apply:
+          tags:
+            - dotfiles
+            - dotfiles-top
+      tags:
+        - dotfiles
+        - dotfiles-top
+
+    - name: Invoke vim role
+      include_role:
+        name: dotfiles_vim
+        apply:
+          tags:
+            - dotfiles
+            - dotfiles-vim
+      tags:
+        - dotfiles
+        - dotfiles-vim
+  tags:
+    - dotfiles
+    - dotfiles-bash
+    - dotfiles-htop
+    - dotfiles-nano
+    - dotfiles-screen
+    - dotfiles-top
+    - dotfiles-vim
