@@ -1,7 +1,7 @@
 ---
 - name: dotfiles
   block:
-    - name: Invoke bash role
+    - name: Include dotfiles_bash
       include_role:
         name: dotfiles_bash
         apply:
@@ -12,7 +12,7 @@
         - dotfiles
         - dotfiles-bash
 
-    - name: Invoke htop role
+    - name: Include dotfiles_htop
       include_role:
         name: dotfiles_htop
         apply:
@@ -23,7 +23,7 @@
         - dotfiles
         - dotfiles-htop
 
-    - name: Invoke nano role
+    - name: Include dotfiles_nano
       include_role:
         name: dotfiles_nano
         apply:
@@ -34,7 +34,7 @@
         - dotfiles
         - dotfiles-nano
 
-    - name: Invoke screen role
+    - name: Include dotfiles_screen
       include_role:
         name: dotfiles_screen
         apply:
@@ -45,7 +45,7 @@
         - dotfiles
         - dotfiles-screen
 
-    - name: Invoke top role
+    - name: Include dotfiles_top
       include_role:
         name: dotfiles_top
         apply:
@@ -56,7 +56,7 @@
         - dotfiles
         - dotfiles-top
 
-    - name: Invoke vim role
+    - name: Include dotfiles_vim
       include_role:
         name: dotfiles_vim
         apply:
@@ -66,11 +66,3 @@
       tags:
         - dotfiles
         - dotfiles-vim
-  tags:
-    - dotfiles
-    - dotfiles-bash
-    - dotfiles-htop
-    - dotfiles-nano
-    - dotfiles-screen
-    - dotfiles-top
-    - dotfiles-vim
