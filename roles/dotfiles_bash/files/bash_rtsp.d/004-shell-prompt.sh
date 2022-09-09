@@ -16,7 +16,6 @@ fi
 case "$TERM" in
 xterm*|rxvt*)
   PS1="\[\e]0;${debian_chroot:+($debian_chroot)}${PS1_UserHost}: \w\a\]$PS1"
-  PROMPT_COMMAND='echo -ne \\a'
   ;;
 *)
   ;;
