@@ -4,7 +4,7 @@ if which git > /dev/null 2>&1; then
   alias gd='git diff'
   alias gds='git diff --staged'
   alias gb='git branch'
-  alias gb='git branch -vv'
+  alias gbv='git branch -vv'
   alias gba='git branch -a'
   alias gbav='git branch -avv'
   alias gl='git log --oneline --graph -n 30 --decorate'
