@@ -20,3 +20,6 @@ xterm*|rxvt*)
 *)
   ;;
 esac
+
+unset \
+  PS1_UserHost
