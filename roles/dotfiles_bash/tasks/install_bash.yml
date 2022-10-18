@@ -26,6 +26,14 @@
     force: true
     backup: true
 
+- name: Deploying ~/.bash_rtsp.d/000-config.sh
+  ansible.builtin.template:
+    src: bash_rtsp.d/000-config.sh.j2
+    dest: ~/.bash_rtsp.d/000-config.sh
+    mode: 0644
+    force: true
+    backup: true
+
 - name: Copying ~/.inputrc
   ansible.builtin.copy:
     src: inputrc
