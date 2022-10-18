@@ -1,8 +1,15 @@
+## hostname template for prompt and window title
+if [ $_RTSP_DOTFILES_BASH_SHELL_PROMPT_FQDN -eq 1 ]; then
+  PS1_Hostname='\H'
+else
+  PS1_Hostname='\h'
+fi
+
 ## user@host template for prompt and window title
 if [ $EUID -eq 0 ]; then
-  PS1_UserHost='\h'
+  PS1_UserHost="${PS1_Hostname}"
 else
-  PS1_UserHost='\u@\h'
+  PS1_UserHost="\\u@${PS1_Hostname}"
 fi
 
 ## prompt color - enable a colored prompt, if the terminal has the capability
@@ -22,4 +29,6 @@ xterm*|rxvt*)
 esac
 
 unset \
+  _RTSP_DOTFILES_BASH_SHELL_PROMPT_FQDN \
+  PS1_Hostname \
   PS1_UserHost
