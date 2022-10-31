@@ -42,3 +42,12 @@
     force: true
     backup: true
   when: rtsp_dotfiles_bash_inputrc | bool
+
+- name: Copying ~/.hushlogin
+  ansible.builtin.copy:
+    src: hushlogin
+    dest: ~/.hushlogin
+    mode: 0644
+    force: true
+    backup: false
+  when: rtsp_dotfiles_bash_hushlogin | bool
