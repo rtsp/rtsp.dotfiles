@@ -2,26 +2,16 @@
 - name: bash
   block:
     - name: Install BASH dotfiles
-      include_tasks:
+      import_tasks:
         file: install_bash.yml
-        apply:
-          tags:
-            - dotfiles
-            - dotfiles-bash
-            - dotfiles-bash-install
       tags:
         - dotfiles
         - dotfiles-bash
         - dotfiles-bash-install
 
     - name: Remove legacy BASH dotfiles
-      include_tasks:
+      import_tasks:
         file: remove_legacy.yml
-        apply:
-          tags:
-            - dotfiles
-            - dotfiles-bash
-            - dotfiles-bash-remove-legacy
       tags:
         - dotfiles
         - dotfiles-bash
