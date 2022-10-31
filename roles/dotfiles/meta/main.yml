@@ -1,0 +1,8 @@
+---
+dependencies:
+  - role: dotfiles_bash
+  - role: dotfiles_htop
+  - role: dotfiles_nano
+  - role: dotfiles_screen
+  - role: dotfiles_top
+  - role: dotfiles_vim
