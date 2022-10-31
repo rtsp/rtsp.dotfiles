@@ -1,2 +1,8 @@
+## Deploy .inputrc to enable navigating history with pgup/pgdn key and several config
+rtsp_dotfiles_bash_inputrc: true
+
+## Deploy .hushlogin to suppress printing of system messages
+rtsp_dotfiles_bash_hushlogin: true
+
 ## Use FQDN (\H) instead of short hostname (\h) in shell prompt (PS1)
 rtsp_dotfiles_bash_shell_prompt_fqdn: false
