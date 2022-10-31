@@ -1,7 +1,7 @@
 ---
 - name: vim
   block:
-    - name: Copying ~/.vimrc
+    - name: Copy ~/.vimrc
       ansible.builtin.copy:
         src: "{{ lookup('first_found', params) }}"
         dest: ~/.vimrc

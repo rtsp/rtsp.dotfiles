@@ -1,5 +1,5 @@
 ---
-- name: Adding ~/.bash_rtsp.d entry point to .bashrc
+- name: Add ~/.bash_rtsp.d entry point to .bashrc
   ansible.builtin.blockinfile:
     path: ~/.bashrc
     backup: true
@@ -7,7 +7,7 @@
     block: |
       source <(cat ~/.bash_rtsp.d/*.sh 2>/dev/null)
 
-- name: Removing HISTSIZE and HISTFILESIZE lines from .bashrc
+- name: Remov HISTSIZE and HISTFILESIZE lines from .bashrc
   ansible.builtin.replace:
     path: ~/.bashrc
     regexp: "{{ item }}"
@@ -17,7 +17,7 @@
     - "^(HISTSIZE=.*)"
     - "^(HISTFILESIZE=.*)"
 
-- name: Copying ~/.bash_rtsp.d/*
+- name: Copy ~/.bash_rtsp.d/*
   ansible.builtin.copy:
     src: bash_rtsp.d/
     dest: ~/.bash_rtsp.d/
@@ -26,7 +26,7 @@
     force: true
     backup: true
 
-- name: Deploying ~/.bash_rtsp.d/000-config.sh
+- name: Deploy ~/.bash_rtsp.d/000-config.sh
   ansible.builtin.template:
     src: bash_rtsp.d/000-config.sh.j2
     dest: ~/.bash_rtsp.d/000-config.sh
@@ -34,7 +34,7 @@
     force: true
     backup: true
 
-- name: Copying ~/.inputrc
+- name: Copy ~/.inputrc
   ansible.builtin.copy:
     src: inputrc
     dest: ~/.inputrc
@@ -43,7 +43,7 @@
     backup: true
   when: rtsp_dotfiles_bash_inputrc | bool
 
-- name: Copying ~/.hushlogin
+- name: Copy ~/.hushlogin
   ansible.builtin.copy:
     src: hushlogin
     dest: ~/.hushlogin

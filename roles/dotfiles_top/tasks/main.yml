@@ -1,7 +1,7 @@
 ---
 - name: top
   block:
-    - name: Copying ~/.toprc
+    - name: Copy ~/.toprc
       ansible.builtin.copy:
         src: "{{ lookup('first_found', params) }}"
         dest: ~/.toprc

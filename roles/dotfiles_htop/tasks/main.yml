@@ -1,7 +1,7 @@
 ---
 - name: htop
   block:
-    - name: Copying ~/.config/htop/htoprc
+    - name: Copy ~/.config/htop/htoprc
       ansible.builtin.copy:
         src: "{{ lookup('first_found', params) }}"
         dest: ~/.config/htop/
