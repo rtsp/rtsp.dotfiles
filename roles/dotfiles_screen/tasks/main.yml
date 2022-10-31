@@ -1,7 +1,7 @@
 ---
 - name: screen
   block:
-    - name: Copying ~/.screenrc
+    - name: Copy ~/.screenrc
       ansible.builtin.copy:
         src: "{{ lookup('first_found', params) }}"
         dest: ~/.screenrc

@@ -1,7 +1,7 @@
 ---
 - name: nano
   block:
-    - name: Copying ~/.nanorc
+    - name: Copy ~/.nanorc
       ansible.builtin.copy:
         src: "{{ lookup('first_found', params) }}"
         dest: ~/.nanorc
