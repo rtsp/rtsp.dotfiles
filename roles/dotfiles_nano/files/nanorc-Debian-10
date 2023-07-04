@@ -1,0 +1,7 @@
+# RTSP BASH environment
+# .nanorc - Version 2.1 2023-07-04
+
+set constantshow
+set smarthome
+set smooth
+set tabsize 2
