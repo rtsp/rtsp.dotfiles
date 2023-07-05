@@ -1,7 +1,5 @@
 ## netstat - shorthand aliases
 alias n='ss -tunlp | column -t'
-alias nt='netstat -tunap'
-alias na='netstat -nap'
 
 ## ps/df/free - shorthand aliases
 alias p='ps axf'
