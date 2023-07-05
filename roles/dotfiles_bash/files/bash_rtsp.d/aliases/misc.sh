@@ -1,5 +1,5 @@
 ## netstat - shorthand aliases
-alias n='netstat -tunlp'
+alias n='ss -tunlp | column -t'
 alias nt='netstat -tunap'
 alias na='netstat -nap'
 
