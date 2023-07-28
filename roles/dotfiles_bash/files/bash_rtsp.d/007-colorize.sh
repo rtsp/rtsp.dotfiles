@@ -1,6 +1,9 @@
 ## lesspipe - make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/bash lesspipe)"
 
+## less - enable color support
+export LESS="-R ${LESS}"
+
 ## gcc - colored GCC warnings and errors
 which gcc > /dev/null 2>&1 && export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
@@ -20,3 +23,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
+
+## ip - enable color support
+alias ip='ip --color=auto'
