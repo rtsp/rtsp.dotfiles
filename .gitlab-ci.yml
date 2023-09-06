@@ -1,17 +1,4 @@
-stages:
-  - linting
-
-## https://gitlab.com/pipeline-components/ansible-lint
-ansible-lint:
-  stage: linting
-  image: registry.gitlab.com/pipeline-components/ansible-lint:latest
-  services: []
-  tags:
-    - docker
-    - build
-  script:
-    - ansible-lint -v --show-relpath -f pep8 --nocolor | ansible-lint-junit -o ansible-lint.xml
-  artifacts:
-    when: always
-    reports:
-      junit: ansible-lint.xml
+include:
+  - project: gitlab-ci/gitlab-ci-templates
+    ref: main
+    file: /ansible/ansible-lint.gitlab-ci.yml
