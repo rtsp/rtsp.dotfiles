@@ -2,7 +2,7 @@
 - name: bash
   block:
     - name: Install BASH dotfiles
-      import_tasks:
+      ansible.builtin.import_tasks:
         file: install_bash.yml
       tags:
         - dotfiles
@@ -10,7 +10,7 @@
         - dotfiles-bash-install
 
     - name: Remove legacy BASH dotfiles
-      import_tasks:
+      ansible.builtin.import_tasks:
         file: remove_legacy.yml
       tags:
         - dotfiles
