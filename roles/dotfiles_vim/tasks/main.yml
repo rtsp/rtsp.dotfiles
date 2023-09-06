@@ -1,5 +1,11 @@
 ---
 - name: vim # noqa: name[casing]
+  when:
+    - ansible_facts.os_family in ["Debian"]
+    - ansible_facts.distribution_major_version | int in [6, 7, 8, 9, 10, 11, 12]
+  tags:
+    - dotfiles
+    - dotfiles-vim
   block:
     - name: Copy ~/.vimrc
       ansible.builtin.copy:
@@ -13,9 +19,3 @@
           files:
             - vimrc-{{ ansible_facts.distribution }}-{{ ansible_facts.distribution_major_version }}
             - vimrc
-  when:
-    - ansible_facts.os_family in ["Debian"]
-    - ansible_facts.distribution_major_version | int in [6, 7, 8, 9, 10, 11, 12]
-  tags:
-    - dotfiles
-    - dotfiles-vim

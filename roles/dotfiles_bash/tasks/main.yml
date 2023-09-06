@@ -1,5 +1,11 @@
 ---
 - name: bash # noqa: name[casing]
+  when:
+    - ansible_facts.os_family in ["Debian"]
+    - ansible_facts.distribution_major_version | int in [9, 10, 11, 12]
+  tags:
+    - dotfiles
+    - dotfiles-bash
   block:
     - name: Install BASH dotfiles
       ansible.builtin.import_tasks:
@@ -16,9 +22,3 @@
         - dotfiles
         - dotfiles-bash
         - dotfiles-bash-remove-legacy
-  when:
-    - ansible_facts.os_family in ["Debian"]
-    - ansible_facts.distribution_major_version | int in [9, 10, 11, 12]
-  tags:
-    - dotfiles
-    - dotfiles-bash

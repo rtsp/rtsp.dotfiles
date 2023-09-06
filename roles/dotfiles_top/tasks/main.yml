@@ -1,5 +1,11 @@
 ---
 - name: top # noqa: name[casing]
+  when:
+    - ansible_facts.os_family in ["Debian"]
+    - ansible_facts.distribution_major_version | int in [6, 7, 8, 9, 10, 11, 12]
+  tags:
+    - dotfiles
+    - dotfiles-top
   block:
     - name: Copy ~/.toprc
       ansible.builtin.copy:
@@ -13,9 +19,3 @@
           files:
             - toprc-{{ ansible_facts.distribution }}-{{ ansible_facts.distribution_major_version }}
             - toprc
-  when:
-    - ansible_facts.os_family in ["Debian"]
-    - ansible_facts.distribution_major_version | int in [6, 7, 8, 9, 10, 11, 12]
-  tags:
-    - dotfiles
-    - dotfiles-top
