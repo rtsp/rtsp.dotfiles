@@ -1,5 +1,5 @@
 ---
-- name: htop
+- name: htop # noqa: name[casing]
   block:
     - name: Copy ~/.config/htop/htoprc
       ansible.builtin.copy:

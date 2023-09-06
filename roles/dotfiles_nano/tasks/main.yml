@@ -1,5 +1,5 @@
 ---
-- name: nano
+- name: nano # noqa: name[casing]
   block:
     - name: Copy ~/.nanorc
       ansible.builtin.copy:

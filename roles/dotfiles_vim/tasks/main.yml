@@ -1,5 +1,5 @@
 ---
-- name: vim
+- name: vim # noqa: name[casing]
   block:
     - name: Copy ~/.vimrc
       ansible.builtin.copy:

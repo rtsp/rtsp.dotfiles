@@ -1,5 +1,5 @@
 ---
-- name: bash
+- name: bash # noqa: name[casing]
   block:
     - name: Install BASH dotfiles
       ansible.builtin.import_tasks:
