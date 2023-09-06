@@ -1,4 +1,5 @@
 ---
-- hosts: "{{ hostnames | default('all') }}"
+- name: dotfiles_bash # noqa: name[casing]
+  hosts: "{{ hostnames | default('all') }}"
   roles:
     - dotfiles_bash

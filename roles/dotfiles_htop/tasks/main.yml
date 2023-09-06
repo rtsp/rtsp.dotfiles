@@ -1,12 +1,18 @@
 ---
-- name: htop
+- name: htop # noqa: name[casing]
+  when:
+    - ansible_facts.os_family in ["Debian"]
+    - ansible_facts.distribution_major_version | int in [7, 8, 9, 10, 11, 12]
+  tags:
+    - dotfiles
+    - dotfiles-htop
   block:
     - name: Copy ~/.config/htop/htoprc
       ansible.builtin.copy:
         src: "{{ lookup('first_found', params) }}"
         dest: ~/.config/htop/
-        directory_mode: 0755
-        mode: 0644
+        directory_mode: "0755"
+        mode: "0644"
         force: true
         backup: true
       vars:
@@ -14,9 +20,3 @@
           files:
             - htoprc-{{ ansible_facts.distribution }}-{{ ansible_facts.distribution_major_version }}
             - htoprc
-  when:
-    - ansible_facts.os_family in ["Debian"]
-    - ansible_facts.distribution_major_version | int in [7, 8, 9, 10, 11, 12]
-  tags:
-    - dotfiles
-    - dotfiles-htop
