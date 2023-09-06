@@ -21,8 +21,8 @@
   ansible.builtin.copy:
     src: bash_rtsp.d/
     dest: ~/.bash_rtsp.d/
-    directory_mode: 0755
-    mode: 0644
+    directory_mode: "0755"
+    mode: "0644"
     force: true
     backup: true
 
@@ -30,7 +30,7 @@
   ansible.builtin.template:
     src: bash_rtsp.d/000-config.sh.j2
     dest: ~/.bash_rtsp.d/000-config.sh
-    mode: 0644
+    mode: "0644"
     force: true
     backup: true
 
@@ -38,7 +38,7 @@
   ansible.builtin.copy:
     src: inputrc
     dest: ~/.inputrc
-    mode: 0644
+    mode: "0644"
     force: true
     backup: true
   when: rtsp_dotfiles_bash_inputrc | bool
@@ -47,7 +47,7 @@
   ansible.builtin.copy:
     src: hushlogin
     dest: ~/.hushlogin
-    mode: 0644
+    mode: "0644"
     force: true
     backup: false
   when: rtsp_dotfiles_bash_hushlogin | bool

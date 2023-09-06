@@ -5,7 +5,7 @@
       ansible.builtin.copy:
         src: "{{ lookup('first_found', params) }}"
         dest: ~/.vimrc
-        mode: 0644
+        mode: "0644"
         force: true
         backup: true
       vars:

@@ -5,8 +5,8 @@
       ansible.builtin.copy:
         src: "{{ lookup('first_found', params) }}"
         dest: ~/.config/htop/
-        directory_mode: 0755
-        mode: 0644
+        directory_mode: "0755"
+        mode: "0644"
         force: true
         backup: true
       vars:
