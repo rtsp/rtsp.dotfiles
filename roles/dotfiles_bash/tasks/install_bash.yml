@@ -7,6 +7,14 @@
     block: |
       source <(cat ~/.bash_rtsp.d/*.sh 2>/dev/null)
 
+- name: Copy ~/.profile (only if missing)
+  ansible.builtin.copy:
+    src: profile
+    dest: ~/.profile
+    mode: "0644"
+    force: false
+    backup: true
+
 - name: Remov HISTSIZE and HISTFILESIZE lines from .bashrc
   ansible.builtin.replace:
     path: ~/.bashrc
