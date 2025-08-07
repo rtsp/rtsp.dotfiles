@@ -39,7 +39,7 @@ elif which yum > /dev/null 2>&1; then
 fi
 
 if which dpkg > /dev/null 2>&1; then
-  alias ql='dpkg -l'
+  alias ql='dpkg --no-pager -l'
   alias qll='dpkg -L'
   alias qls='dpkg -S'
 elif which rpm > /dev/null 2>&1; then
