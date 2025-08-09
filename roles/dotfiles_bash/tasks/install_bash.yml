@@ -15,7 +15,7 @@
     force: false
     backup: true
 
-- name: Remov HISTSIZE and HISTFILESIZE lines from .bashrc
+- name: Remove HISTSIZE and HISTFILESIZE lines from .bashrc
   ansible.builtin.replace:
     path: ~/.bashrc
     regexp: "{{ item }}"
