@@ -8,8 +8,9 @@ if which git > /dev/null 2>&1; then
   alias gba='git branch -a'
   alias gbav='git branch -avv'
   alias gl='git log --oneline --graph -n 30 --decorate'
+  alias gll='git log --oneline --graph -n 1 --decorate --stat'
   alias gla='git log --oneline --graph -n 30 --decorate --all'
-  alias gls='git log --oneline --graph -n 1 --decorate --stat'
+  alias gls='git log --oneline --graph -n 30 --decorate $(git diff --name-only --cached)'
   alias gld='git diff HEAD~1 HEAD'
   alias grv='git remote -v'
 fi
